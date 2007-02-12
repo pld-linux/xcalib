@@ -1,5 +1,5 @@
 Summary:	Monitor calibration loader
-Summary(pl):	Narzêdzie do wczytywania kalibracji monitora
+Summary(pl.UTF-8):   NarzÄ™dzie do wczytywania kalibracji monitora
 Name:		xcalib
 Version:	0.6
 Release:	1
@@ -14,8 +14,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 xcalib is a tiny monitor calibration loader for XFree86 (or X.org) and
 MS Windows.
 
-%description -l pl
-xcalib to ma³e narzêdzie do wczytywania kalibracji monitora dla
+%description -l pl.UTF-8
+xcalib to maÅ‚e narzÄ™dzie do wczytywania kalibracji monitora dla
 XFree86 (lub X.org) oraz MS Windows.
 
 %prep
