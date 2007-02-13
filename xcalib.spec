@@ -1,5 +1,5 @@
 Summary:	Monitor calibration loader
-Summary(pl.UTF-8):   Narzędzie do wczytywania kalibracji monitora
+Summary(pl.UTF-8):	Narzędzie do wczytywania kalibracji monitora
 Name:		xcalib
 Version:	0.6
 Release:	1
