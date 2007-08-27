@@ -8,7 +8,7 @@ Group:		X11/Applications
 Source0:	http://www.etg.e-technik.uni-erlangen.de/web/doe/xcalib/%{name}-source-%{version}.tar.gz
 # Source0-md5:	1fbcae44ad8d754512fdd1e5f1b3a7e7
 URL:		http://www.etg.e-technik.uni-erlangen.de/web/doe/xcalib/
-BuildRequires:	xorg-lib-libXxf86vm-devel
+BuildRequires:	X11-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -25,7 +25,8 @@ XFree86 (lub X.org) oraz MS Windows.
 %build
 %{__make} \
 	CC="%{__cc}" \
-	CFLAGS="%{rpmcflags}"
+	CFLAGS="%{rpmcflags}" \
+	XLIBDIR="/usr/X11R6/%{_lib}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
