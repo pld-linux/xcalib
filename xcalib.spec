@@ -1,13 +1,14 @@
 Summary:	Monitor calibration loader
 Summary(pl.UTF-8):	Narzędzie do wczytywania kalibracji monitora
 Name:		xcalib
-Version:	0.6
+Version:	0.8
 Release:	1
 License:	GPL (postcardware)
 Group:		X11/Applications
 Source0:	http://www.etg.e-technik.uni-erlangen.de/web/doe/xcalib/%{name}-source-%{version}.tar.gz
-# Source0-md5:	076f9c28c2d1766d36c424dd1609cdbf
+# Source0-md5:	1fbcae44ad8d754512fdd1e5f1b3a7e7
 URL:		http://www.etg.e-technik.uni-erlangen.de/web/doe/xcalib/
+BuildRequires:	xorg-lib-libXxf86vm-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
