@@ -25,7 +25,7 @@ XFree86 (lub X.org) oraz MS Windows.
 %setup -q
 
 %build
-%ifarch %{x86}
+%ifarch %{ix86}
 %{__make} fglrx_xcalib \
 	CC="%{__cc}" \
 	CFLAGS="%{rpmcflags}"
