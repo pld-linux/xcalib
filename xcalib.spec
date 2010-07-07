@@ -25,22 +25,26 @@ XFree86 (lub X.org) oraz MS Windows.
 %setup -q
 
 %build
+%ifnrch %{x86}
 %{__make} fglrx_xcalib \
 	CC="%{__cc}" \
 	CFLAGS="%{rpmcflags}"
-mv xcalib fglrx_xcalib
+mv xcalib xcalib_fglrx
+%endif
 
 %{__make} clean
 %{__make} xcalib \
 	CC="%{__cc}" \
 	CFLAGS="%{rpmcflags}"
 
-
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_iccdir}}
 
-install xcalib fglrx_xcalib $RPM_BUILD_ROOT%{_bindir}
+%ifarch %{ix86}
+install xcalib_fglrx $RPM_BUILD_ROOT%{_bindir}
+%endif
+install xcalib $RPM_BUILD_ROOT%{_bindir}
 install *.icc $RPM_BUILD_ROOT%{_iccdir}
 
 %clean
@@ -49,6 +53,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc COPYING README*
-%attr(755,root,root) %{_bindir}/xcalib
-%attr(755,root,root) %{_bindir}/fglrx_xcalib
+%attr(755,root,root) %{_bindir}/xcalib*
 %{_iccdir}/*.icc
